@@ -1,0 +1,45 @@
+<div wmslider>
+  <p>
+    <img
+      src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+      alt="Praia"
+      alt="513"
+      height="342"
+      title="praia"
+    />
+  </p>
+
+  <p>
+    <img
+      src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+      alt="Intro cod3r"
+      height="342"
+    />
+  </p>
+
+  <p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png" />
+  </p>
+</div>
+<style>
+  .circular {
+    width: 513;
+    background-color: gray;
+  }
+</style>
+
+<script>
+  function mover(elem, inicio, fim, passo, callback) {
+    const novoInicio = inicio - passo;
+
+    if (novoInicio >= fim) {
+      elem.style.left = novoInicio + "px";
+      setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7);
+    } else {
+      callback();
+    }
+    const p = document.querySelector("[wmslider] > p");
+    p.style.display = "block";
+    mover(p, 1500, -520, 5, () => console.log("fim"));
+  }
+</script>

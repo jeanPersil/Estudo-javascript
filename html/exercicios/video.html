@@ -1,0 +1,93 @@
+<video
+  id="meuVideo"
+  width="800"
+  height="450"
+  controls
+  controlsList="nodownload"
+  class="video-container"
+>
+  <source
+    src="http://files.cod3r.com.br/curso-web/video.mp4"
+    type="video/mp4"
+  />
+</video>
+
+<div wm-Progresso="meuVideo" class="progresso" , id="barra">
+  <div></div>
+</div>
+
+<div class="botao-container">
+  <button onclick="play()" class="botao">Play</button>
+  <button onclick="pausa()" class="botao">Pause</button>
+</div>
+
+<style>
+  .progresso {
+    height: 20px; /* Corrigido de 20x para 20px */
+    width: 500px;
+    border: solid 1px grey;
+    margin: 20px;
+  }
+  .progresso > div {
+    background-color: red;
+    color: blue;
+    height: 100%;
+    text-align: right;
+    font-size: 14px;
+    width: 0%;
+  }
+
+  .botao {
+    background-color: #ffc107;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+  }
+  .botao:hover {
+    transform: rotate(360deg);
+  }
+
+  .botao:hover {
+    background-color: blue;
+    color: white;
+    transform: scale();
+  }
+
+  .botao-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+</style>
+
+<script>
+  let video = document.getElementById("meuVideo");
+
+  function play() {
+    elementoVideo = document.getElementById("meuVideo");
+    barraDeProgresso = document.getElementById("barra");
+    duracaoTotal = elementoVideo.duration;
+    atualizar = setInterval(atualizarBarra, 500);
+
+    video.play();
+  }
+
+  function atualizarBarra() {
+    if (!video.paused && !video.ended) {
+      let resultado = (video.currentTime / video.duration) * 100; // Calcular
+      barraDeProgresso.style.width = resultado + "%"; // Atualizar a largura
+    }
+  }
+
+  function pausa() {
+    video.pause();
+  }
+</script>

@@ -1,0 +1,22 @@
+body {
+  font-size: 40px;
+}
+
+ul,
+ol {
+  padding: 0%;
+}
+
+li {
+  margin-left: 60pc;
+}
+
+.tag {
+  border: solid 3px;
+  margin: 5px;
+}
+.tag label {
+  color: white;
+  font-size: 25px;
+  vertical-align: top;
+}
