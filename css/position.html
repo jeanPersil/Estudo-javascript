@@ -1,26 +1,75 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Position</title>
     <style>
-        /* ... */
-    </style>
-</head>
+      div {
+        font-size: 60px;
+        padding: 30px;
+        border: solid 5px #222;
+        color: white;
+      }
+      .static {
+        top: 100px;
+        left: 100px;
+        background-color: steelblue;
+      }
+      .fixed {
+        position: fixed; /* fixa o elemento em m lugar especifico da tela */
+        background-color: aqua;
+        bottom: 30px; /* começa de baixo */
+        right: 0px;
+      }
 
-<body>
+      .relative1 {
+        position: relative; /* Posicionado com base no elemento anterior */
+        left: 50px; /* dando espaçamento de 50 px da esquerda */
+        top: 5px; /* dando espaçamento de 5 pixel do elemento anterior de cima */
+        background-color: seagreen;
+      }
+
+      .absolute1 {
+        position: absolute; /* não leva em consideração outros elementos da tela */
+        background-color: pink;
+        top: 120px; /* espaçamento de 120 pixels de cima */
+        left: 350px; /* espacamento de 350 pixels da esquerda */
+      }
+
+      .relative2 {
+        position: relative;
+        left: 250px;
+        top: 2000px;
+        width: 200px;
+        height: 200px;
+        background-color: slategrey;
+      }
+      .absolute2 {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        background-color: orange;
+      }
+
+      .sticky {
+        position: sticky; /* se posisiona EM cima da tela */
+        background-color: darkslateblue;
+        top: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="static">Static (Padrão)</div>
     <div class="fixed">Fixed</div>
     <div class="relative1">Relative</div>
     <div class="absolute1">Absolute</div>
 
     <div class="relative2">
-        <div class="absolute2"></div>
+      <div class="absolute2"></div>
     </div>
 
     <div class="sticky">Sticky</div>
-    <p style="padding-bottom: 2000px;">Opa</p>
-</body>
-
+    <p style="padding-bottom: 2000px">Opa</p>
+  </body>
 </html>
