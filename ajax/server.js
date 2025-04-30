@@ -29,4 +29,11 @@ app.post("/upload", (req, resp) => {
   });
 });
 
-app.listen(8080, () => console.log("executando"));
+app.post("/formulario", (req, resp) => {
+  console.log(req.body);
+  resp.send({
+    ...req.body,
+    id: 1,
+  });
+});
+app.listen(8081, () => console.log("teste"));

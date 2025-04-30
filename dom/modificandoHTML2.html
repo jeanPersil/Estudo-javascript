@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Modificando HTML #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
 
-<body class='conteudo exercicio'>
+  <body class="conteudo exercicio">
     <div>
-        <p>Texto Inicial</p>
+      <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
-    </script>
-</body>
+      const div = document.querySelector("div");
+      div.innerHTML = "Texto Alterado";
+      div.insertAdjacentHTML("beforebegin", "<p> Antes Inicio</p> ");
+      div.insertAdjacentHTML("afterbegin", "<p> Dentro</p> ");
 
+      if (div.innerText === "texto alterado") {
+        console.log("eita");
+      }
+    </script>
+  </body>
 </html>
